@@ -1,3 +1,20 @@
+# What I would do differently in production:
+
+* I would use a migration management system like Alembic to manage the database schema.
+* I would fix the UI (there are some bugs).
+* I would add automated tests. I didn't deem them necessary for this exercise.
+* I would add load balancing, production dockerfiles and a production docker-compose file.
+
+The excersice is only for user management, however I have made the manager hooks, api client and backend reusable for to be able to potentially scale up easier. Due to the instructions of the project I haven't included an update endpoint nor made frontend functionality for it. The manager class on the backend does however have this and it should work.
+
+# How to run the application:
+
+* Install docker.
+* Run`docker compose up` in the root directory of the project.
+
+
+***Original instructions:***
+
 # Full Stack Developer assignment
 
 A base project is provided with Docker Compose including the following components:
@@ -43,9 +60,9 @@ directories.
   application to run.
 - [ ] A`user` table with the following fields should be automatically created when the
   containers start (the`DATABASE_URL` env variable has the connection string):
-  -  id
-  -  name
-  -  email
+  - id
+  - name
+  - email
 - [ ] Create a`GET /users/` endpoint that returns a list of all users (fields: ID, name,
   email).
 - [ ] Create a`POST /users/` endpoint that creates a new user (fields: name, email).
